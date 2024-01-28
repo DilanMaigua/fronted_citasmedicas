@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="card card-signin flex-row my-5">
+        <div class="card-img-left d-none d-md-flex">
+          <!-- Background image for card set in CSS! -->
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title text-center">Registro de Cita</h5>
+            <form [formGroup]="citasForm">
+  
+            <div class="container"> <!------------------->
+
+              <div class="row my-4">
+                <span class="col">
+                  <span class="p-float-label">
+                    <p-dropdown [options]="listPacients" optionLabel="name" [autoDisplayFirst]="false" 
+                      optionValue="code" formControlName="id_pacient" [style]="{width: '100%'}"></p-dropdown>
+                    <label for="consultorio">Pacientes</label>
+                  </span>
+                </span>
+                <span class="col">
+                  <span class="p-float-label">
+                    <p-dropdown [options]="listMedics" optionLabel="name" [autoDisplayFirst]="false" 
+                      optionValue="code" formControlName="id_medic" [style]="{width: '100%'}"></p-dropdown>
+                    <label for="consultorio">Medicos</label>
+                  </span>
+                </span>
+              </div>
+
+              <div class="row my-4"> <!------------------->
+                
+                <div class="col">
+                  <span class="p-float-label">
+                    <input pInputText type="text" id="inputUserame" class="form-control" required autofocus
+                      formControlName="query_type">
+                    <label for="inputUserame">Tipo de Cita</label>
+                  </span>
+                </div>
+
+                <div class="col">
+                  <span class="p-float-label">
+                    <input pInputText type="text" id="inputConfirmPassword" class="form-control"
+                      formControlName="number_cite" >
+                    <label for="inputConfirmPassword">Número de Cita</label>
+                  </span>
+                </div>
+
+                <div class="col">
+                  <span class="p-float-label">
+                    <input pInputText type="text" id="inputConfirmPassword" class="form-control" required
+                      formControlName="site">
+                    <label for="inputConfirmPassword">Lugar</label>
+                  </span>
+              </div>
+
+              </div> <!------------------->
+
+              <div class="row my-4"> <!------------------->
+                <div class="col">
+                  <span class="p-float-label">
+                    <input pInputText type="text" id="inputPassword" class="form-control" required
+                      formControlName="query_description">
+                    <label for="inputPassword">Descripción de la Consulta</label>
+                  </span>
+                </div>
+                
+              </div> <!------------------->
+
+              <div class="row my-4"> <!------------------->
+
+                <div class="col">
+                    <span class="p-float-label">
+                      <p-dropdown [options]="listConsulting" optionLabel="name" [autoDisplayFirst]="false" inputId="consultorio"
+                        optionValue="name" formControlName="consulting_room" [style]="{width: '100%'}"></p-dropdown>
+                      <label for="consultorio">Consultorio</label>
+                    </span>
+                </div>
+
+                <div class="col">
+                  <span class="p-float-label">
+                    <p-calendar [showTime]="true" [showIcon]="true" formControlName="horary" ></p-calendar>
+                    <label for="horario_entrada">Horario</label>
+                  </span>
+                </div>
+
+               </div> <!------------------->
+
+              <div class="row my-4"> <!------------------->
+
+                <div class="col">
+                  <span class="p-float-label">
+                    <input pInputText type="text" id="Observaciones" class="form-control" required autofocus
+                      formControlName="observations">
+                    <label for="Observaciones">Observaciones</label>
+                  </span>
+                </div>
+                
+                <div class="col">
+                  <span class="p-float-label">
+                    <p-dropdown [options]="listStates" optionLabel="name" [autoDisplayFirst]="false" 
+                      optionValue="name" formControlName="state" [style]="{width: '100%'}"></p-dropdown>
+                    <label for="consultorio">Estado</label>
+                  </span>
+                </div>
+              </div> <!------------------->
+
+            </div> <!------------------->
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"
+              (click)="handleClickSaveCitas()">Registrar Cita</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

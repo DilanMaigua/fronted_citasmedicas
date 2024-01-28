@@ -1,0 +1,51 @@
+<div class="container">
+
+  <ul style="margin-top: 20px; margin-bottom: 20px;" class="nav nav-tabs">
+        <li class="nav-item">
+          <a routerLink="/admin" routerLinkActive="active-link" class="nav-link" href="#">Gestor de Módulos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/medico" routerLinkActive="active-link" class="nav-link active" href="#">Médico</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/paciente" routerLinkActive="active-link" class="nav-link" href="#">Paciente</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/citas" routerLinkActive="active-link" class="nav-link" href="#">Citas</a>
+        </li>
+  </ul>
+
+  <p class="lead">Gestión de Médicos.</p>
+  <hr style="color: #0056b2;" />
+
+  <div class="row mt-4">
+    <p-button class="mx-1" icon="pi pi-user-plus" styleClass="p-button-rounded" 
+    (onClick)="handleClickContact('CREATE')" [disabled]="contactAction === 'CREATE'"></p-button>
+
+    <p-button class="mx-1" icon="pi pi-list" styleClass="p-button-rounded p-button-success" 
+    (onClick)="handleClickContact('LIST')" [disabled]="contactAction === 'LIST'"></p-button>
+
+    <p-button class="mx-1" icon="pi pi-user-edit" styleClass="p-button-rounded p-button-help"
+    (onClick)="handleClickContact('DASHBOARD')" [disabled]="contactAction === 'DASHBOARD'"></p-button>
+  </div>
+
+  <ng-container [ngSwitch]="contactAction">
+    <div *ngSwitchCase="'CREATE'">
+      <citas-create></citas-create>
+    </div>
+
+    <div *ngSwitchCase="'LIST'">
+      <citas-list></citas-list>
+    </div>
+
+    <div *ngSwitchCase="'DASHBOARD'">
+      <citas-dash></citas-dash>
+    </div>
+
+    <div *ngSwitchDefault>
+      Default!
+    </div>
+
+  </ng-container>
+
+</div>
