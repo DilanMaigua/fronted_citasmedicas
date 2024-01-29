@@ -1,0 +1,36 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-light gradient-custom">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <b><h4 class="pt-1 mb-1">SISMEG</h4></b>
+            </a>
+
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a routerLink="/home" routerLinkActive="active-link" class="nav-link active" href="#">Home</a>
+                </li>
+
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-custom my-2 my-sm-0" type="submit" (click)="navegar_gestion()">Gestión</button>
+            </form>
+
+        </div>
+        <!-- Right elements -->
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+<router-outlet></router-outlet>
+<p-toast></p-toast>
